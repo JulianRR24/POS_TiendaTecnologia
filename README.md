@@ -186,7 +186,7 @@ Si deseas probar este proyecto en tu máquina, sigue estos pasos cuidadosamente:
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone [https://github.com/tu_usuario/tu_repositorio.git](https://github.com/JulianRR24/POS_TiendaTecnologia.git)
+git clone https://github.com/JulianRR24/POS_TiendaTecnologia.git
 cd POS_TiendaTecnologia
 ```
 
