@@ -17,9 +17,10 @@ Cada cliente tiene los siguientes campos:
 - `foto` (VARCHAR) - Nombre del archivo de la foto
 - `creado_en` (TIMESTAMP) - Fecha de creación
 
-<img width="1919" height="1027" alt="Captura de pantalla 2025-10-03 104107" src="https://github.com/user-attachments/assets/e1b10ed9-527a-4455-900c-156bb93d2ac3" />
 <img width="1919" height="1026" alt="Captura de pantalla 2025-10-03 104053" src="https://github.com/user-attachments/assets/ace6d775-06c6-4527-8b06-96cfc45cdfdb" />
 <img width="1919" height="1025" alt="Captura de pantalla 2025-10-03 104044" src="https://github.com/user-attachments/assets/5d5456e5-bf3c-4b3c-b4a2-76f1beb42660" />
+<img width="1919" height="1027" alt="Captura de pantalla 2025-10-03 104107" src="https://github.com/user-attachments/assets/e1b10ed9-527a-4455-900c-156bb93d2ac3" />
+
 
 
 ---
