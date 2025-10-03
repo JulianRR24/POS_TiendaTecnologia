@@ -176,3 +176,73 @@ if (pictureBoxFoto.Image != null)
 - Las fotos se guardan únicamente como nombres de archivo en la base de datos, no como blobs.
 - Se recomienda tener la carpeta `Fotos` en la misma ubicación que el ejecutable.
 - CRUD completo con integración de imágenes funcional en Windows Forms.
+
+---
+
+## 📌 Tutorial: Cómo clonar y ejecutar el proyecto
+
+Si deseas probar este proyecto en tu máquina, sigue estos pasos cuidadosamente:
+
+### 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/tu_usuario/tu_repositorio.git
+cd tu_repositorio
+```
+
+### 2️⃣ Requisitos
+
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
+
+* **Visual Studio 2022** o superior con soporte para C# y Windows Forms.
+* **.NET Framework 4.8** (o la versión que uses en el proyecto).
+* **MySQL Server** y **MySQL Workbench** opcional.
+* El paquete **MySql.Data 9.4.0** (ya incluido en el proyecto, si usas NuGet restaurará automáticamente).
+
+### 3️⃣ Crear la base de datos
+
+1. Abre **MySQL Workbench** o tu cliente MySQL favorito.
+2. Ejecuta las siguientes instrucciones SQL:
+
+```sql
+CREATE DATABASE IF NOT EXISTS pos_tienda_tecnologia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE pos_tienda_tecnologia;
+
+CREATE TABLE IF NOT EXISTS clientes (
+    cedula VARCHAR(20) NOT NULL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100),
+    telefono VARCHAR(20),
+    correo VARCHAR(100),
+    direccion VARCHAR(255),
+    foto VARCHAR(255),
+    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+### 4️⃣ Configurar la cadena de conexión
+
+* Abre `Form1.cs` y verifica la variable `cadenaConexion`.
+  Debe coincidir con tus credenciales de MySQL:
+
+```csharp
+string cadenaConexion = "server=localhost;user=root;password=tu_contraseña;database=pos_tienda_tecnologia;";
+```
+
+### 5️⃣ Crear carpeta para fotos
+
+* Dentro de la carpeta raíz del proyecto, asegúrate de que exista la carpeta `Fotos`.
+  El programa guardará automáticamente las imágenes de los clientes aquí. Si no existe, el proyecto la creará al guardar la primera foto.
+
+### 6️⃣ Ejecutar el proyecto
+
+* Abre el proyecto en **Visual Studio**.
+* Compila y ejecuta (`F5`).
+* Podrás agregar, editar, eliminar y buscar clientes con fotos, además de verlos en el **DataGridView**.
+
+### 7️⃣ Consideraciones importantes
+
+* Las imágenes se guardan localmente en la carpeta `Fotos`. Si eliminas un cliente, su foto se eliminará automáticamente.
+* Todos los nombres de las fotos se guardan en la base de datos en la columna `foto`.
+* Evita cambiar manualmente los nombres de los archivos dentro de `Fotos`, puede desincronizarse con la base de datos.
